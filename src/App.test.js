@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import BookingForm from './components/pages/BookingPage/BookingForm';
 import {updateTimes, initializeTimes } from "./components/pages/BookingPage/bookingUtils"
+import { fetchAPI } from './components/pages/BookingPage/api';
 
 describe('BookingForm Component', () => {
   test('Renders heading and all form fields with correct labels and attributes', () => {
@@ -22,13 +23,21 @@ describe('BookingForm Component', () => {
 
 describe('Utility functions for booking', () => {
   test('testing function updateTimes', () => {
-    const state = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-    const action = {type: 'update_times', newDate: '2025-04-13'}
-    expect(updateTimes(state, action)).toEqual(state);
+
+    const state = fetchAPI(new Date());
+    const dateMAJ = '2025-04-12'
+
+    const action = {type: 'update_times', newDate: dateMAJ}
+
+    const availableTimes = fetchAPI(new Date(dateMAJ));
+
+    expect(updateTimes(state, action)).toEqual(availableTimes);
   });
 
   test('testing function initializeTimes', () => {
-    expect(initializeTimes()).toEqual(["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]);
+    const availableTimes = fetchAPI(new Date());
+
+    expect(initializeTimes()).toEqual(availableTimes);
   });
 
 });
