@@ -1,7 +1,11 @@
 export default function Menu() {
     return (
-        <div>
-            Menu
-        </div>
+        <>
+            <section>
+                <div className="container">
+                    Menu
+                </div>
+            </section>
+        </>
     )
 }

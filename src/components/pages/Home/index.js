@@ -2,10 +2,12 @@ import Server from '../../../assets/images/server.jpg'
 import GreekSalad from '../../../assets/images/greek salad.jpg'
 import Bruschetta from '../../../assets/images/bruschetta.jpg'
 import LemonDessert from '../../../assets/images/lemon dessert.jpg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './styles.css'
 
 export default function Home() {
+    const navigate = useNavigate()
+
     return (
         <>
             <section className='hero'>
@@ -14,7 +16,12 @@ export default function Home() {
                         <h1>Little Lemon</h1>
                         <h2>Chicago</h2>
                         <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-                        <button>Reserve a Table</button>
+                        <button
+                            onClick={() => navigate('/booking')}
+                            aria-label='On Click'
+                        >
+                            Reserve a Table
+                        </button>
                     </div>
                     <img src={Server} alt='Server picture'  />
                 </div>
@@ -23,7 +30,12 @@ export default function Home() {
                 <div className='container'>
                     <div className='header'>
                         <h2>This weeks specials!</h2>
-                        <button>Online Menu</button>
+                        <button
+                            onClick={() => navigate('/menu')}
+                            aria-label='On Click'
+                        >
+                            Online Menu
+                        </button>
                     </div>
                     <div className='cards'>
                         <div className='card'>

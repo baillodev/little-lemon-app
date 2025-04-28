@@ -1,7 +1,11 @@
 export default function OrderOnline() {
     return (
-        <div>
-            Order Online
-        </div>
+        <>
+            <section>
+                <div className="container">
+                    Order Online
+                </div>
+            </section>
+        </>
     )
 }

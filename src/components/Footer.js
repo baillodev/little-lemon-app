@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Logo from '../assets/Logo.svg'
+import logo from '../assets/images/logo2.png'
 import Nav from './Nav'
 
 export default function Footer() {
@@ -7,7 +7,7 @@ export default function Footer() {
         <footer>
             <div className='container'>
                 <Link to='/'>
-                    <img src={Logo} alt='Little Lemon Logo' />
+                    <img src={logo} alt='Little Lemon Logo' width={80} />
                 </Link>
                 <div>
                     <h3>Doormat Navigation</h3>

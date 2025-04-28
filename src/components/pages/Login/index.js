@@ -1,7 +1,11 @@
 export default function Login() {
     return (
-        <div>
-            Login
-        </div>
+        <>
+            <section>
+                <div className="container">
+                    Login
+                </div>
+            </section>
+        </>
     )
 }

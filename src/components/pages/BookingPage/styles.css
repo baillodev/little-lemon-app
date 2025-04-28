@@ -1,5 +1,23 @@
 form {
-    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fields {
     display: grid;
-    gap: 20px
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, select {
+    padding: 16px;
+    border-radius: 8px;
+    border: none;
 }

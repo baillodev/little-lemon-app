@@ -1,5 +1,5 @@
 import Nav from './Nav';
-import Logo from '../assets/Logo.svg'
+import logo from '../assets/images/logo1.png'
 import { Link } from 'react-router-dom';
 
 export default function Header() {
@@ -7,7 +7,7 @@ export default function Header() {
         <header>
             <div className='container'>
                 <Link to='/'>
-                    <img src={Logo} alt='Little Lemon Logo' />
+                    <img src={logo} alt='Little Lemon Logo' width={148} height={40} />
                 </Link>
                 <Nav />
             </div>
