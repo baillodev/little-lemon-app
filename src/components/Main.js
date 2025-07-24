@@ -24,7 +24,6 @@ export default function Main() {
     }
 
     return (
-        // Uitiliser ARIA pour l'accessibilité
         <main>
             <Routes>
                 <Route path='/' element={<Home />} />

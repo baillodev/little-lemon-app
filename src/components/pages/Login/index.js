@@ -1,10 +1,10 @@
 export default function Login() {
     return (
         <>
-            <section>
-                <div className="container">
-                    Login
-                </div>
+            <section className="hero">
+                <div className="container centered">
+                    <h1>Login</h1>
+               </div>
             </section>
         </>
     )

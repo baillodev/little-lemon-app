@@ -1,43 +1,8 @@
-h1 {
-    color: #F4CE14;
-    font-family: 'Markazi Text', sans-serif;
-    font-size: 64px;
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 42px;
-    font-weight: 700;
-}
-
-p {
-    font-size: 20px;
-    font-weight: 600;
-}
-
-button {
-    background: #F4CE14;
-    color: #333;
-    font-size: 24px;
-    font-weight: 700;
-    border: none;
-    padding: 14px 18px;
-    border-radius: 16px;
-}
-
-.hero {
-    background: #495E57;
-    color: #EDEFEE;
-}
-
-.hero .container {
+.hero-container {
     display: flex;
-    justify-content: space-between;
-    height: 400px;
-    margin-bottom: 64px;
 }
 
-.hero .container > div {
+.hero-text {
     width: 400px;
     margin-top: 32px;
     display: flex;
@@ -45,20 +10,31 @@ button {
     justify-content: flex-start;
     align-items: flex-start;
     gap: 20px;
+    z-index: 2;
+    flex: 1;
 }
 
-.hero .container > img {
-    height: 400px;
-    width: auto;
+.hero-image-container {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.hero-image {
+    height: 450px;
+    width: 350px;
+    object-fit: cover;
     margin-top: 32px;
     border-radius: 16px;
+    z-index: 2;
 }
 
 .highlights .container {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding: 32px 0 64px;
+    padding-top: 96px;
+    padding-bottom: 64px;
 }
 
 .highlights .header {
@@ -70,16 +46,56 @@ button {
     display: flex;
     justify-content: center;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 .card {
-    background: #D9D9D9;
-    width: 260px;
-    border-radius: 16px 16px 0 0;
+    background: #FFF;
+    width: 320px;
+    border-radius: 16px;
+    box-shadow: 0 14px 16px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    position: relative;
+}
+
+.card:hover {
+    box-shadow: 0 20px 24px rgba(0, 0, 0, 0.2);
 }
 
 .card > img {
     width: 100%;
-    height: 160px;
+    height: 220px;
     border-radius: 16px 16px 0 0;
+}
+
+.card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card-content-header,
+.card-content-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-content-header span {
+    color: #E28D42;
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column-reverse;
+    }
+    
+    .hero-image-container {
+        justify-content: center;
+    }
+
+    .hero-image {
+        z-index: 0;
+    }
 }

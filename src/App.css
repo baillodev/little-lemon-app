@@ -7,10 +7,32 @@ a {
   text-decoration: none;
 }
 
-.container {
-  width: 60%;
-  max-width: 1280px;
-  margin: 0 auto;
+h1 {
+    color: #F4CE14;
+    font-family: 'Markazi Text', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+button {
+    background: #F4CE14;
+    color: #333;
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+    padding: 14px 18px;
+    border-radius: 16px;
+    cursor: pointer;
 }
 
 header {
@@ -19,7 +41,19 @@ header {
 
 header nav ul {
   display: flex;
-  gap: 20px;
+  gap: 6px;
+}
+
+header ul li a {
+  font-size: 18px;
+  padding: 4px 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+header ul li a:hover {
+  background: #495E57;
+  color: #EDEFEE;
+  border-radius: 5px;
 }
 
 header .container{
@@ -43,40 +77,112 @@ footer ul {
   gap: 10px;
 }
 
+footer a:hover {
+  text-decoration: underline;
+  color: #495E57;
+}
+
 footer .container {
   display: grid;
   grid-template-columns: repeat(4, auto);
   justify-content: space-between;
 }
 
-@media screen and (max-width: 1024px) {
+.hero {
+    background: #495E57;
+    color: #EDEFEE;
+    position: relative;
+}
+
+.hero .container {
+    height: 430px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.mobile-menu {
+  text-align: end;
+  position: relative;
+}
+
+.mobile-menu nav ul {
+  background-color: #fff;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  width: 200px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+}
+
+.mobile-menu ul li,
+.mobile-menu ul li a {
+  width: 100%;
+}
+
+.mobile-menu ul li {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 4px;
+}
+
+.mobile-menu ul li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.mobile-menu ul li a {
+  display: block;
+  text-align: center;
+}
+
+.mobile-menu ul li a:hover {
+  background: #495E57;
+  color: #EDEFEE;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
   .container {
-    width: 70%;
+    padding: 0 24px;
   }
 
-  header nav ul {
-    flex-direction: column;
+  .hero .container {
+    height: auto;
+    padding-bottom: 32px;
   }
 
   footer .container {
     grid-template-columns: repeat(3, auto);
     gap: 64px;
   }
-
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    width: 80%;
-  }
-
-  footer .container {
-    grid-template-columns: repeat(2, auto);
-  }
 }
 
 @media screen and (max-width: 640px) {
   .container {
-    width: 90%;
+    padding: 0 16px;
+  }
+  footer .container {
+    grid-template-columns: repeat(2, auto);
   }
 }
